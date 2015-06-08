@@ -28,12 +28,13 @@
     // your JS code goes here
     var AppView = Backbone.View.extend({
 
-      el: '#container', 
+      el: $('#container'), 
+      template: _.template("<h3> hello <%= who %> </h3>"), 
       initialize: function() {
         this.render(); 
       }, 
       render: function() {
-        this.$el.html("hello world!"); 
+        this.$el.html(this.template({who: "world!"})); 
       }
     })
 
